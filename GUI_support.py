@@ -112,13 +112,16 @@ class frame():
 def set_Tk_var():
 
     global FRAME_SIZE
-    FRAME_SIZE = 512.0
+
 
     #all string variables below are used to set GUI message box texts
     global fileContent
     fileContent = StringVar()
     global pagesLoaded
     pagesLoaded = StringVar()
+    global ramSize
+    ramSize = StringVar()
+    ramSize.set("512")
     global pagesString
     pagesString = ""
     global messageBoxStrings
@@ -144,6 +147,10 @@ def sortFreeFrames(frames):
 
 #if the file menu option is selected, pop up a file selection window
 def fileSelected():
+    global FRAME_SIZE
+    global ramSize
+    #set frame size to whatever user entered
+    FRAME_SIZE = float(ramSize.get())
     fileLines = ""
     filename = tkFileDialog.askopenfilename(initialdir="", title="Select file", filetypes=(
     ("text files", "*.txt"), ("all files", "*.*")))

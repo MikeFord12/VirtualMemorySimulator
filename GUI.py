@@ -66,7 +66,7 @@ class Memory_Simulator:
 
         self.menubar = Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
         top.configure(menu = self.menubar)
-
+        #file button
         self.menubar.add_command(
                 activebackground="#d8d8d8",
                 activeforeground="#000000",
@@ -78,7 +78,7 @@ class Memory_Simulator:
 
 
 
-
+        #next button
         self.NextButton = Button(top)
         self.NextButton.place(relx=0.16, rely=0.62, height=33, width=43)
         self.NextButton.configure(activebackground="#000000")
@@ -92,7 +92,7 @@ class Memory_Simulator:
         self.NextButton.configure(highlightcolor="black")
         self.NextButton.configure(pady="0")
         self.NextButton.configure(text='''Next''')
-
+        #message window for file output
         self.Message1 = Message(top)
         self.Message1.place(relx=0.05, rely=0.03, relheight=0.56, relwidth=0.25)
         self.Message1.configure(background="#ffffff")
@@ -102,7 +102,7 @@ class Memory_Simulator:
         self.Message1.configure(text='''Message''')
         self.Message1.configure(textvariable=GUI_support.fileContent)
         self.Message1.configure(width=246)
-
+        #message windows for 8 frames
         self.Frame1 = Message(top)
         self.Frame1.place(relx=0.37, rely=0.03, relheight=0.09, relwidth=0.14)
         self.Frame1.configure(background="#ffff00")
@@ -182,7 +182,7 @@ class Memory_Simulator:
         self.Frame8.configure(text='''Message''')
         self.Frame8.configure(textvariable=GUI_support.messageBoxStrings[7])
         self.Frame8.configure(width=136)
-
+        #message box for loading statements
         self.Message4 = Message(top)
         self.Message4.place(relx=0.58, rely=0.03, relheight=0.9, relwidth=0.37)
         self.Message4.configure(background="#ffffff")
@@ -192,8 +192,16 @@ class Memory_Simulator:
         self.Message4.configure(text='''Message''')
         self.Message4.configure(textvariable = GUI_support.pagesLoaded)
         self.Message4.configure(width=356)
-
-
+        #ntry for user to input frame size
+        self.RamField = Entry(top)
+        self.RamField.place(relx=0.12, rely=0.77,height=24, relwidth=0.1)
+        self.RamField.configure(background="white")
+        self.RamField.configure(disabledforeground="#a3a3a3")
+        self.RamField.configure(font="TkFixedFont")
+        self.RamField.configure(foreground="#000000")
+        self.RamField.configure(insertbackground="black")
+        self.RamField.configure(textvariable=GUI_support.ramSize)
+        self.RamField.configure(width=94)
 
 
 
